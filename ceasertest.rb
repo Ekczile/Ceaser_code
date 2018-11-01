@@ -6,6 +6,6 @@ class Test_for_Ceasercode < Minitest::Test
     assert_equal(1,1)
     end
     def test_for_encrypt
-        assert_equal("qnrgt", tossed_salad("limbo"))
+        assert_equal("f", tossed_salad("a"))
     end
 end
