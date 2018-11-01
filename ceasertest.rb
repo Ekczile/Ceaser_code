@@ -14,4 +14,7 @@ class Test_for_Ceasercode < Minitest::Test
     def test_for_two_words
         assert_equal("xjsi gfhpzu", tossed_salad("send backup"))
     end
+    def test_for_two_words
+        assert_equal("", tossed_salad("send backup please!"))
+    end
 end 
