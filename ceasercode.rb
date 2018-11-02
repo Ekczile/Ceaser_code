@@ -3,9 +3,9 @@ def tossed_salad(strings_to_be_encoded)
 letters = ("a".."z").to_a
 # make variable that adds letters as key then make letter rotated by 5 the value
 encrypt = letters.zip(letters.rotate(5)).to_h
-# merge new keys and value after the roate so they stay at normal index's
+# merge new keys and value after the rotate so they stay at normal index's
 encrypt.merge!(" " => " "); encrypt.merge!("," => ","); encrypt.merge!("?" => "?"); encrypt.merge!("!" => "!"); encrypt.merge!("\"" => "\""); encrypt.merge!("." => "."); encrypt.merge!("-" => "-");
-# conditional for if any of keys of the array match any of my characters in strings_to_be_encoded if they put didn work
+# conditional for if any of keys of the array match any of my characters in strings_to_be_encoded if they dont match put didn't work
     if (encrypt.keys & strings_to_be_encoded.split("")).empty?
         p "didn't work"
     else
