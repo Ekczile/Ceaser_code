@@ -15,6 +15,12 @@ class Test_for_Ceasercode < Minitest::Test
         assert_equal("xjsi gfhpzu", tossed_salad("send backup"))
     end
     def test_for_two_words
-        assert_equal("", tossed_salad("send backup please!"))
+        assert_equal("xjsi gfhpzu uqjfxj!", tossed_salad("send backup please!"))
     end
-end 
+    def test_for_grammatical_special_character
+        assert_equal(",\".?!-", tossed_salad(",\".?!-"))
+    end
+    def test_for_false_keys
+        assert_equal("didn't work", tossed_salad("\@##$%#%^$%*(_+="))
+    end
+end
