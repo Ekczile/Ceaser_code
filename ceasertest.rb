@@ -23,4 +23,7 @@ class Test_for_Ceasercode < Minitest::Test
     def test_for_false_keys
         assert_equal("didn't work", tossed_salad("\@##$%#%^$%*(_+="))
     end
+    def test_one_untossed
+        assert_equal("a", untossed_salad("f"))
+    end
 end
