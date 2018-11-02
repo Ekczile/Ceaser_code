@@ -26,4 +26,7 @@ class Test_for_Ceasercode < Minitest::Test
     def test_one_untossed
         assert_equal("a", untossed_salad("f"))
     end
+    def test_for_words_unencrypted
+        assert_equal("help", untossed_salad("mjqu"))
+    end
 end
