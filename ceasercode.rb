@@ -15,14 +15,3 @@ encrypt.merge!(" " => " "); encrypt.merge!("," => ","); encrypt.merge!("?" => "?
     end
 end
 
-def untossed_salad(strings_to_be_encoded)
-    letters = ("a".."z").to_a
-    encrypt = letters.zip(letters.rotate(-5)).to_h
-    encrypt.merge!(" " => " "); encrypt.merge!("," => ","); encrypt.merge!("?" => "?"); encrypt.merge!("!" => "!"); encrypt.merge!("\"" => "\""); encrypt.merge!("." => "."); encrypt.merge!("-" => "-");
-        if (encrypt.keys & strings_to_be_encoded.split("")).empty?
-        p "didn't work"
-     else
-        p strings_to_be_encoded.chars.map { |v| encrypt.fetch(v) }.join
-        return strings_to_be_encoded.chars.map { |v| encrypt.fetch(v) }.join
-    end
-end
