@@ -24,16 +24,19 @@ class Test_for_Ceasercode < Minitest::Test
         assert_equal("didn't work", tossed_salad("\@##$%#%^$%*(_+="))
     end
     def test_one_untossed
-        assert_equal("f", untossed_salad("a"))
+        assert_equal("a", untossed_salad("f"))
     end
     def test_for_words_unencrypted
-        assert_equal("mjqu", untossed_salad("help"))
+        assert_equal("czgk", untossed_salad("help"))
     end
     def test_for_two_words
-        assert_equal("send backup please!", untossed_salad("nziy wvxfpk kgzvnz!"))
+        assert_equal("send backup please!", untossed_salad("xjsi gfhpzu uqjfxj!"))
     end
     def test_for_long_message
-        assert_equal("attack at first sunlight!", untossed_salad("voovxf vo admno npigdbco!"))
+        assert_equal("attack at first sunlight!", untossed_salad("fyyfhp fy knwxy xzsqnlmy!"))
+    end
+    def test_for_long_message_decoded
+        assert_equal("fyyfhp fy knwxy xzsqnlmy!", tossed_salad("attack at first sunlight!"))
     end
     def test_for_uppercase
         assert_equal("MJQQT", tossed_salad("HELLO"))
@@ -48,9 +51,9 @@ class Test_for_Ceasercode < Minitest::Test
         assert_equal("xjsi 65,5555 xtqinjwx",tossed_salad("send 10,0000 soldiers"))
     end
     def test_ammount_of_soldiers_decoded
-        assert_equal("send 10,0000 soldiers",untossed_salad("nziy 65,5555 njgydzmn"))
+        assert_equal("send 10,0000 soldiers",untossed_salad("xjsi 65,5555 xtqinjwx"))
     end
     def test_for_up_soldiers_decode
-        assert_equal("", untossed_salad("NziY 65,5555 NjgydzMn"))
+        assert_equal("Send 10,0000 soldiErS", untossed_salad("Xjsi 65,5555 xtqinJwX"))
     end
 end

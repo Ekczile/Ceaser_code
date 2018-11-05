@@ -22,7 +22,7 @@ def untossed_salad(strings_to_be_encoded)
     letters = ("a".."z").to_a
     upletters = ("A".."Z").to_a
     numbers = ("0".."9").to_a
-    encrypt = letters.zip(letters.rotate(5)).to_h.merge!(upletters.zip(upletters.rotate(5)).to_h).merge!(numbers.zip(numbers.rotate(5)).to_h)
+    encrypt = letters.zip(letters.rotate(-5)).to_h.merge!(upletters.zip(upletters.rotate(-5)).to_h).merge!(numbers.zip(numbers.rotate(-5)).to_h)
     encrypt.merge!(" " => " "); encrypt.merge!("," => ","); encrypt.merge!("?" => "?"); encrypt.merge!("!" => "!"); encrypt.merge!("\"" => "\""); encrypt.merge!("." => "."); encrypt.merge!("-" => "-");
         if (encrypt.keys & strings_to_be_encoded.split("")).empty?
         p "didn't work"
