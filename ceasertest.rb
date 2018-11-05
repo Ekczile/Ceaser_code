@@ -29,4 +29,10 @@ class Test_for_Ceasercode < Minitest::Test
     def test_for_words_unencrypted
         assert_equal("help", untossed_salad("mjqu"))
     end
+    def test_for_two_words
+        assert_equal("nziy wvxfpk kgzvnz!", untossed_salad("send backup please!"))
+    end
+    def test_for_long_message
+        assert_equal("voovxf vo admno npigdbco!", untossed_salad("attack at first sunlight!"))
+    end
 end
