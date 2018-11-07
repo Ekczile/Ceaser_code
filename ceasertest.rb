@@ -62,4 +62,22 @@ class Test_for_Ceasercode < Minitest::Test
     def test_for_unrotate_by_day
         assert_equal("abc", untossed_salad("ghi", -6))
     end
+    def test_for_30_days
+        assert_equal("efg", tossed_salad("abc", 30))
+    end
+    def test_for_30_days_unencoded
+    assert_equal("abc", untossed_salad("efg", -30))
+    end
+    def test_for_day_26
+        assert_equal("fgh", tossed_salad("abc", 26))
+    end
+    def test_for_day_26_unencoded
+        assert_equal("abc", untossed_salad("fgh", -26))
+    end
+    def test_for_day_26_and_time
+        assert_equal("Bj sjji mjqu fy 67",tossed_salad("We need help at 12", 26))
+    end
+    def test_for_day_26_and_time_unencoded
+        assert_equal("We need help at 12", untossed_salad("Bj sjji mjqu fy 67", -26))
+    end
 end

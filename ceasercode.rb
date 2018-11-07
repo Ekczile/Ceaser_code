@@ -1,5 +1,9 @@
 def tossed_salad(strings_to_be_encoded, rotate)
+    if rotate == 26
+        rotate = 5
+    end
 # array of letters`123rf
+# time = Time.new
 letters = ("a".."z").to_a
 upletters = ("A".."Z").to_a
 numbers = ("0".."9").to_a
@@ -19,7 +23,10 @@ p (encrypt.keys & strings_to_be_encoded.split(""))
 end
 
 def untossed_salad(strings_to_be_encoded, rotate)
-    time1 = Time.new
+    if rotate == -26
+        rotate = -5
+    end
+    # time1 = Time.new
     letters = ("a".."z").to_a
     upletters = ("A".."Z").to_a
     numbers = ("0".."9").to_a
