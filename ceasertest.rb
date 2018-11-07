@@ -21,7 +21,7 @@ class Test_for_Ceasercode < Minitest::Test
         assert_equal(",\".?!-", tossed_salad(",\".?!-", 5))
     end
     def test_for_false_keys
-        assert_equal("didn't work", tossed_salad("\@##$%#%^$%*(_+=", 5))
+        assert_equal("Please, use grammatical characters only", tossed_salad("\@##$%#%^$%*(_+=", 5))
     end
     def test_one_untossed
         assert_equal("a", untossed_salad("f", -5))
@@ -80,4 +80,14 @@ class Test_for_Ceasercode < Minitest::Test
     def test_for_day_26_and_time_unencoded
         assert_equal("We need help at 12", untossed_salad("Bj sjji mjqu fy 67", -26))
     end
+    def test_for_day_0
+    assert_equal("bmfy mfuujsx?", tossed_salad("what happens?", 0))
+    end
+    def test_for_day_0_unencoded
+        assert_equal("what happens?", untossed_salad("bmfy mfuujsx?", 0))
+    end
+    def test_day_for_non_integers
+        assert_equal("bmfy mfuujsx stb?", tossed_salad("what happens now?", "asd"))
+    end
 end
+

@@ -1,5 +1,6 @@
 def tossed_salad(strings_to_be_encoded, rotate)
-    if rotate == 26
+    rotate = rotate.to_i
+    if rotate == 26 || rotate == 0
         rotate = 5
     end
 # array of letters`123rf
@@ -14,7 +15,7 @@ encrypt.merge!(" " => " "); encrypt.merge!("," => ","); encrypt.merge!("?" => "?
 # conditional for if any of keys of the array match any of my characters in strings_to_be_encoded if they dont match put didn't work
 p (encrypt.keys & strings_to_be_encoded.split(""))
     if (encrypt.keys & strings_to_be_encoded.split("")).empty?
-        p "didn't work"
+        p "Please, use grammatical characters only"
     else
         # when they do match output encrypted code
         p strings_to_be_encoded.chars.map { |v| encrypt.fetch(v) }.join
@@ -23,7 +24,7 @@ p (encrypt.keys & strings_to_be_encoded.split(""))
 end
 
 def untossed_salad(strings_to_be_encoded, rotate)
-    if rotate == -26
+    if rotate == -26 || rotate == 0
         rotate = -5
     end
     # time1 = Time.new
@@ -33,7 +34,7 @@ def untossed_salad(strings_to_be_encoded, rotate)
     encrypt = letters.zip(letters.rotate(rotate)).to_h.merge!(upletters.zip(upletters.rotate(rotate)).to_h).merge!(numbers.zip(numbers.rotate(rotate)).to_h)
     encrypt.merge!(" " => " "); encrypt.merge!("," => ","); encrypt.merge!("?" => "?"); encrypt.merge!("!" => "!"); encrypt.merge!("\"" => "\""); encrypt.merge!("." => "."); encrypt.merge!("-" => "-");
         if (encrypt.keys & strings_to_be_encoded.split("")).empty?
-        p "didn't work"
+        p "Please, use grammatical characters only"
      else
         p strings_to_be_encoded.chars.map { |v| encrypt.fetch(v) }.join
         return strings_to_be_encoded.chars.map { |v| encrypt.fetch(v) }.join
