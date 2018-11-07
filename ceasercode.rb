@@ -24,6 +24,7 @@ p (encrypt.keys & strings_to_be_encoded.split(""))
 end
 
 def untossed_salad(strings_to_be_encoded, rotate)
+    rotate = rotate.to_i
     if rotate == -26 || rotate == 0
         rotate = -5
     end
