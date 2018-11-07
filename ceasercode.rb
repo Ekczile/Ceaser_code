@@ -14,7 +14,7 @@ encrypt = letters.zip(letters.rotate(rotate)).to_h.merge!(upletters.zip(upletter
 encrypt.merge!(" " => " "); encrypt.merge!("," => ","); encrypt.merge!("?" => "?"); encrypt.merge!("!" => "!"); encrypt.merge!("\"" => "\""); encrypt.merge!("." => "."); encrypt.merge!("-" => "-");
 # conditional for if any of keys of the array match any of my characters in strings_to_be_encoded if they dont match put didn't work
 p (encrypt.keys & strings_to_be_encoded.split(""))
-    if (encrypt.keys & strings_to_be_encoded.split("")).empty?
+    if (encrypt.keys & strings_to_be_encoded.split("")).empty? || 
         p "Please, use grammatical characters only"
     else
         # when they do match output encrypted code
